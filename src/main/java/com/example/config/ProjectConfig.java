@@ -3,6 +3,7 @@ package com.example.config;
 import com.example.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 /**
  * Spring @Configuration annotation is part of the spring core framework.
@@ -16,6 +17,7 @@ public class ProjectConfig {
      * Bean annotation, which lets Spring know that it needs to call this method
      * when it initializes its context and adds the returned value to the context.
      */
+    @Primary
     @Bean(value="Gallardo")
     Vehicle vehicle() {
         var veh = new Vehicle();
