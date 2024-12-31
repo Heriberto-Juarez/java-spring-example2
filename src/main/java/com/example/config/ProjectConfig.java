@@ -23,6 +23,20 @@ public class ProjectConfig {
         return veh;
     }
 
+    @Bean
+    Vehicle vehicle2(){
+        var veh = new Vehicle();
+        veh.setName("Lamborghini Aventador");
+        return veh;
+    }
+
+    @Bean
+    Vehicle vehicle3(){
+        var veh = new Vehicle();
+        veh.setName("Lamborghini Veneno");
+        return veh;
+    }
+
     /**
      * The method names usually follow verbs notation. But for methods which we will use
      * to create beans, we can use nouns as names
