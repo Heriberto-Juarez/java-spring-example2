@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Example1 {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Vehicle veh = context.getBean("vehicle3",Vehicle.class);
-        System.out.println("Vehicle from Spring Context is: " + veh.getName());
+        Vehicle aventador = context.getBean("Aventador",Vehicle.class);
+        System.out.println("Vehicle from Spring Context is: " + aventador.getName());
     }
 }
