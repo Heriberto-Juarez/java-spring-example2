@@ -12,5 +12,6 @@ public class Example2 {
         System.out.println("Vehicle is: " + primaryVehicle.getName());
         primaryVehicle.printHello();
 
+        context.close();
     }
 }
