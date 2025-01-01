@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.beans.Person;
 import com.example.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,19 +17,25 @@ import org.springframework.context.annotation.Primary;
 
 public class ProjectConfig {
 
-    /**
-     * The method names usually follow verbs notation. But for methods which we will use
-     * to create beans, we can use nouns as names
-     * This will be a good practice as the method names will become bean names as well in the context.
-     */
     @Bean
-    String hello(){
-        return "Hello world";
+    public Vehicle vehicle(){
+        Vehicle vehicle = new Vehicle();
+        vehicle.setName("Aston Martin");
+        return vehicle;
     }
 
+    /**
+     * Here in the code below, we are trying to wire or establish a relationship between Person and Vehicle
+     * by invoking the vehicle() bean method from person() beam method.
+     * Spring will make sure only 1 vehicle bean is created and also vehicle bean will be created first
+     * always as person bean has dependency on it.
+     */
     @Bean
-    Integer number() {
-        return 16;
+    public Person person(){
+        Person person = new Person();
+        person.setName("Lucy");
+        person.setVehicle(vehicle());
+        return person;
     }
 
 }
